@@ -48,27 +48,33 @@ def remove_soft(local,remote):
 
 
 if __name__ == "__main__":
-    fin = file('/home/nourl/data/install.soft','r')
+    fin = file('/home/nourl/install.soft','r')
     remote_list = get_soft_list(fin)
-    fin.close()
-    
-    #print len(soft_list)
-    os.popen('dpkg -l > tmp_local_soft')
-    
-    flocal = file('tmp_local_soft','r')
-    local_list = get_soft_list(flocal)
-    flocal.close()
+    fin.close()    
     
     #print local_list
-    yes = raw_input("install remote machine soft?")
-    if yes:
+    install = raw_input("install remote machine soft?")
+    if install:
+        #print len(soft_list)
+        os.popen('dpkg -l > tmp_local_soft')
+        flocal = file('tmp_local_soft','r')
+        local_list = get_soft_list(flocal)
+        flocal.close()
         install_soft(local_list, remote_list)
         
-    yes = raw_input("remove local machine soft?")
-    if yes:
-        remove_soft(local_list, remote_list)
-        
-    os.system('rm tmp_local_soft')
+#    remove = raw_input("remove local machine soft?")
+#    if remove:
+#        #print len(soft_list)
+#        os.popen('dpkg -l > tmp_local_soft')
+#        flocal = file('tmp_local_soft','r')
+#        local_list = get_soft_list(flocal)
+#        flocal.close()
+#        remove_soft(local_list, remote_list)
+#        
+#    if install or remove:
+#        os.system('rm tmp_local_soft')
+    if install:
+        os.system('rm tmp_local_soft')
         
     print "Done!\n Soft on your system is the same as remote machine~!\n"
     
