@@ -1,3 +1,4 @@
 after eclipse:   
 pydev      http://www.fabioz.com/pydev/updates/
-subclipse  http://subclipse.tigris.org/update_1.6.x 
+subclipse  http://subclipse.tigris.org/update_1.6.x
+android-dt https://dl-ssl.google.com/android/eclipse/ 
