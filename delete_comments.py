@@ -1,10 +1,3 @@
-#Author: nourlcn AT Gtalk
-#Protocol/License:creativecommons.org/licenses/by-nc-sa/2.5/cn/
-
-#http://weibo.com/nourl
-#http://t.qq.com/nourlcn
-
-
 import re
 import os
 
